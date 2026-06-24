@@ -37,7 +37,21 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "organisation_unit"
+    "rest_framework",
+    "organisation_unit",
+    "technical_area",
+    "area_coop",
+    "afg_health_strategy",
+    "monitoring_technical_performance",
+    "framework_funding",
+    "strategic_alignment",
+    "mou_indicators",
+    "sens",
+    "data_source",
+    "qualitative_analysis",
+    "risk_matrix",
+    "list_1_5"
+
 ]
 
 MIDDLEWARE = [
