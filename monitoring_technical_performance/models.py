@@ -1,12 +1,14 @@
 from django.db import models
 from data_source.models import DataSourceIndicator
+from mou_indicators.models import MOUIndicators
+from sens.models import Sens
 
 
 # Create your models here.
 class MonitoringAlignment(models.Model):
-    performance_indicator = models.ForeignKey("MOUIndicators", on_delete=models.CASCADE)
-    sens = models.ForeignKey("Sens", on_delete=models.CASCADE)
-    data_source_indicator = models.ForeignKey("DataSourceIndicator", on_delete=models.CASCADE)
+    performance_indicator = models.ForeignKey(MOUIndicators, on_delete=models.CASCADE)
+    sens = models.ForeignKey(Sens, on_delete=models.CASCADE)
+    data_source_indicator = models.ForeignKey(DataSourceIndicator, on_delete=models.CASCADE)
     annual_target = models.FloatField(default=0)
     result_achieved = models.FloatField(default=0)
     achievement_rate = models.FloatField(default=0)

@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "data_source",
     "qualitative_analysis",
     "risk_matrix",
-    "list_1_5"
+    "list_1_5",
+    "action_status"
 
 ]
 
