@@ -51,8 +51,9 @@ INSTALLED_APPS = [
     "qualitative_analysis",
     "risk_matrix",
     "list_1_5",
-    "action_status"
-
+    "action_status",
+    "reporting",
+    "ip_identifier"
 ]
 
 MIDDLEWARE = [

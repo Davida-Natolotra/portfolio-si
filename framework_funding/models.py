@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from organisation_unit.models import OrganisationUnit
 from area_coop.models import AreaCoop,SubAreaCoop
@@ -12,6 +13,11 @@ class FrameworkFunding(models.Model):
     area = models.ForeignKey(AreaCoop,on_delete=models.CASCADE)
     contribution = models.ForeignKey(SubAreaCoop,on_delete=models.CASCADE)
     assigned_funding = models.IntegerField(default=0)
+
+    def clean(self):
+        if self.district_id and self.region_id:
+            if self.district.parent_id != self.region_id:
+                raise ValidationError({'district': 'District must belong to the selected region.'})
 
     def __str__(self):
         return str(self.region.name)    
