@@ -23,5 +23,5 @@ class MOUIndicators(models.Model):
     value = models.FloatField()
 
     def __str__(self):
-        return self.indicator_name
+        return self.indicator_name.indicator_name
 
