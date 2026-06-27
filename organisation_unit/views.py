@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import OrganisationUnit
+from .serializers import OrganisationUnitSerializer
 
-# Create your views here.
+
+class OrganisationUnitViewSet(ModelViewSet):
+    queryset = OrganisationUnit.objects.all()
+    serializer_class = OrganisationUnitSerializer

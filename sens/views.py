@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Sens
+from .serializers import SensSerializer
 
-# Create your views here.
+
+class SensViewSet(ModelViewSet):
+    queryset = Sens.objects.all()
+    serializer_class = SensSerializer

@@ -6,9 +6,11 @@ from mou_indicators.models import Indicators
 from sens.models import Sens
 
 
-# Create your models here.
 class MonitoringAlignment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    reporting = models.OneToOneField(
+        'reporting.Reporting', on_delete=models.CASCADE, related_name='monitoring_alignment'
+    )
     performance_indicator = models.ForeignKey(Indicators, on_delete=models.CASCADE)
     sens = models.ForeignKey(Sens, on_delete=models.CASCADE)
     data_source_indicator = models.ForeignKey(DataSourceIndicator, on_delete=models.CASCADE)

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import TechnicalArea
+from .serializers import TechnicalAreaSerializer
 
-# Create your views here.
+
+class TechnicalAreaViewSet(ModelViewSet):
+    queryset = TechnicalArea.objects.all()
+    serializer_class = TechnicalAreaSerializer

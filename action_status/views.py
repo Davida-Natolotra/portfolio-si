@@ -1,6 +1,13 @@
-from django.shortcuts import render
-from .models import ActivityStatus, ActionStatus
-# Create your views here.
+from rest_framework.viewsets import ModelViewSet
+from .models import ActionStatus, ActivityStatus
+from .serializers import ActionStatusSerializer, ActivityStatusSerializer
 
-def index(request):
-    pass
+
+class ActionStatusViewSet(ModelViewSet):
+    queryset = ActionStatus.objects.all()
+    serializer_class = ActionStatusSerializer
+
+
+class ActivityStatusViewSet(ModelViewSet):
+    queryset = ActivityStatus.objects.all()
+    serializer_class = ActivityStatusSerializer

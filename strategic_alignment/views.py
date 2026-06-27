@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import StrategicAlignment
+from .serializers import StrategicAlignmentSerializer
 
-# Create your views here.
+
+class StrategicAlignmentViewSet(ModelViewSet):
+    queryset = StrategicAlignment.objects.all()
+    serializer_class = StrategicAlignmentSerializer

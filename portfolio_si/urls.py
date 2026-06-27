@@ -1,23 +1,23 @@
-"""
-URL configuration for portfolio_si project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/", include("action_status.urls")),
+    path("api/", include("afg_health_strategy.urls")),
+    path("api/", include("area_coop.urls")),
+    path("api/", include("data_source.urls")),
+    path("api/", include("framework_funding.urls")),
+    path("api/", include("ip_identifier.urls")),
+    path("api/", include("list_1_5.urls")),
+    path("api/", include("monitoring_technical_performance.urls")),
+    path("api/", include("mou_indicators.urls")),
+    path("api/", include("organisation_unit.urls")),
+    path("api/", include("pop_district.urls")),
+    path("api/", include("qualitative_analysis.urls")),
+    path("api/", include("reporting.urls")),
+    path("api/", include("risk_matrix.urls")),
+    path("api/", include("sens.urls")),
+    path("api/", include("strategic_alignment.urls")),
+    path("api/", include("technical_area.urls")),
 ]

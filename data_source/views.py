@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import DataSourceIndicator
+from .serializers import DataSourceIndicatorSerializer
 
-# Create your views here.
+
+class DataSourceIndicatorViewSet(ModelViewSet):
+    queryset = DataSourceIndicator.objects.all()
+    serializer_class = DataSourceIndicatorSerializer

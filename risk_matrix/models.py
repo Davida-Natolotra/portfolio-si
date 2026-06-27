@@ -1,12 +1,13 @@
 from django.db import models
-
 from action_status.models import ActionStatus
 
 
-# Create your models here.
 class RiskMatrixActionPlan(models.Model):
+    reporting = models.OneToOneField(
+        'reporting.Reporting', on_delete=models.CASCADE, related_name='risk_matrix'
+    )
     risk_identified = models.TextField()
-    impact =models.PositiveIntegerField()
+    impact = models.PositiveIntegerField()
     probability = models.PositiveIntegerField()
     risk_score = models.PositiveIntegerField()
     risk_level = models.CharField()

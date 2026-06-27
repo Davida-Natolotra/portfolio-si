@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Population
+from .serializers import PopulationSerializer
 
-# Create your views here.
+
+class PopulationViewSet(ModelViewSet):
+    queryset = Population.objects.all()
+    serializer_class = PopulationSerializer

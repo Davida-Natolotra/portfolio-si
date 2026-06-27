@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import RiskMatrixActionPlan
+from .serializers import RiskMatrixActionPlanSerializer
 
-# Create your views here.
+
+class RiskMatrixActionPlanViewSet(ModelViewSet):
+    queryset = RiskMatrixActionPlan.objects.all()
+    serializer_class = RiskMatrixActionPlanSerializer

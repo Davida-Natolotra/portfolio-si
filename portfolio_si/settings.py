@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     "list_1_5",
     "action_status",
     "reporting",
-    "ip_identifier"
+    "ip_identifier",
+    "pop_district",
 ]
 
 MIDDLEWARE = [

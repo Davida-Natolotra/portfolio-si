@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import MonitoringAlignment
+from .serializers import MonitoringAlignmentSerializer
 
-# Create your views here.
+
+class MonitoringAlignmentViewSet(ModelViewSet):
+    queryset = MonitoringAlignment.objects.all()
+    serializer_class = MonitoringAlignmentSerializer

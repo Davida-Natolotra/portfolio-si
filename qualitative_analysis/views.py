@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import QualitativeAnalysis
+from .serializers import QualitativeAnalysisSerializer
 
-# Create your views here.
+
+class QualitativeAnalysisViewSet(ModelViewSet):
+    queryset = QualitativeAnalysis.objects.all()
+    serializer_class = QualitativeAnalysisSerializer
